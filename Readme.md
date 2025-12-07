@@ -1,153 +1,136 @@
-Student Record Management System (SRMS)
+Student Management System
 
-A modular C-based Student Record Management System designed for learning, portfolio building, and academic projects.
-The system includes file handling, login authentication, sorting, searching, CSV exporting, and login history tracking.
+A simple and efficient Student Management System built using C.
+This project helps store, manage, update, delete, search, and export student records.
+It works completely on file handling, ensuring data is permanently stored even after the program closes.
 
-This project is structured professionally with separate header, source, and data files—making it ideal for a GitHub coding-skills portfolio.
+Features: 
 
-🚀 Features
-🔐 1. Login System
+Core Features
 
-Credentials stored in data/credentials.txt
+Add new student records
 
-Username, password, and role support
+View all student records
 
-Every successful login is recorded with timestamp in:
+Search for a student by ID or name
 
-data/login_history.txt
+Update existing student information
 
-📚 2. Student Data Management
+Delete a student record
 
-Student records stored persistently in:
+Export student records to a CSV file
 
-data/students.txt
+Maintain a login system
 
+Track login history
 
-Supports adding, editing, and saving records
+Store credentials securely in a text file
 
-🔍 3. Search Students (Feature #1)
+Generate student reports
 
-Search by:
+Display top performers
 
-ID
+Count total number of students
 
-Name
+Categorize students by department
+
+Sort students by marks, name, or ID
+
+Additional Features:
+
+Simple file-based database
+
+Auto-save after every operation
+
+Error handling for invalid inputs
+
+Duplicate-ID prevention
+
+Minimal and easy-to-read C code structure
+
+File Structure
+Source Code
+
+Contains all C files needed to run the system.
+
+Data Folder
+
+Stores:
+
+students.txt – raw student data
+
+exported_students.csv – exported report
+
+credentials.txt – admin login credentials
+
+login_history.txt – timestamped login records
+
+Output Folder
+
+Contains generated files such as:
+
+report.txt
+
+top_students.txt
+
+backups (if enabled)
+
+How It Works
+
+The admin logs in using a username and password stored in credentials.txt.
+
+Every login is recorded inside login_history.txt.
+
+Students are added and stored in students.txt using a predefined format.
+
+When export is selected, the system generates exported_students.csv.
+
+Updates and deletions modify the same file using temporary file handling.
+
+How to Run
+
+Install a C compiler (GCC recommended).
+
+Compile the program:
+gcc main.c -o sms
+
+Run the program:
+./sms
+
+Credentials File Format
+
+File: credentials.txt
+admin password
+
+(First line is username, second line is password.)
+
+Login History File Format
+
+File: login_history.txt
+Each line contains a timestamp and login status.
 
 Example:
+2025-01-11 14:32:22 – Login successful
 
-Enter ID or Name to search: John
+Exported CSV Format
 
-🔢 4. Sort Students (Feature #4)
+File: exported_students.csv
+CSV includes:
+student_id, name, department, marks, age
 
-Sort student records by:
+Future Enhancements
 
-ID
+GUI version
 
-Name
+Online database integration
 
-Marks
+Role-based login
 
-📤 5. Export to CSV (Feature #7)
+Encrypted credential storage
 
-Exports all students into a CSV file:
+Attendance and fee management
 
-output/exported_students.csv
+Author
 
-
-Useful for Excel, Google Sheets, and data analysis.
-
-📅 6. Login History (Feature #11)
-
-Every login is recorded automatically with:
-
-Username
-
-Date
-
-Time
-
-Stored in:
-
-data/login_history.txt
-
-📂 Project Structure
-SRMS/
-│
-├── include/
-│   ├── students.h
-│   ├── auth.h
-│   ├── utils.h
-│
-├── src/
-│   ├── main.c
-│   ├── students.c
-│   ├── auth.c
-│   ├── utils.c
-│
-├── data/
-│   ├── credentials.txt
-│   ├── students.txt
-│   ├── login_history.txt
-│
-├── output/
-│   ├── exported_students.csv
-│
-├── Makefile
-└── README.md
-
-🛠 Compilation & Execution
-🔧 Using Makefile
-make
-
-
-This creates:
-
-./srms.exe
-
-▶ Run the program
-./srms.exe
-
-📝 Default Credentials
-Username	Password	Role
-admin	admin123	admin
-staff	staff123	staff
-user	user123	user
-📌 Sample Student Data (students.txt)
-1 Ravi 85.00
-2 Raju 75.00
-3 John 66.00
-4 Dev 78.00
-5 Hari 90.00
-
-🧱 Technologies Used
-
-C Programming
-
-File Handling
-
-Modular Programming
-
-Makefile
-
-CSV Exporting
-
-Timestamps (ctime)
-
-🎯 Learning Outcomes
-
-By studying this project, you’ll learn:
-
-✔ How to build modular C applications
-✔ File handling & persistence
-✔ Authentication system
-✔ Searching & sorting algorithms
-✔ CSV export formatting
-✔ GitHub project structuring
-
-🤝 Contributing
-
-Feel free to fork this repo, create a branch and submit a pull request.
-
-📜 License
-
-This project is open-source under the MIT License.
+Harshad – SRM University
+Passionate about C programming, data management, and automation.
